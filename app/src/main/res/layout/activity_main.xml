@@ -15,4 +15,40 @@
         android:text="Казунина Софья Т-403901 ИСиТ"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="190dp"
+        android:layout_height="289dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="107dp">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="toast1"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="toast2"
+            android:text="2" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="dialog"
+            android:text="3" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="test"
+            android:text="Тест" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
