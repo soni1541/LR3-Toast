@@ -12,16 +12,22 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="29dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="59dp"
         android:text="Казунина Софья Т-403901 ИСиТ"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="190dp"
-        android:layout_height="289dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginBottom="335dp"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="107dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
 
         <Button
             android:id="@+id/button"

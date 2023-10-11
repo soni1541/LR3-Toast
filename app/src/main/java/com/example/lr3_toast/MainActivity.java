@@ -7,9 +7,12 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.google.android.material.internal.ContextUtils;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,14 +30,15 @@ public class MainActivity extends AppCompatActivity {
 
     public void toast2 (View view){
         Toast toast = Toast.makeText(getApplicationContext(), "Кнопка №2 нажата", Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.CENTER,0,0);
         toast.show();
     }
 
 
 
-    public Dialog onCreateDialog(Bundle savedInstanceState){
+    public void dialog (View view){
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
         builder.setTitle("Кнопка №3")
 
@@ -56,10 +60,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        return builder.create();
+        builder.show();
+
+        builder.create();
     }
     public void test (View view){
         Toast toast = Toast.makeText(getApplicationContext(), "Кнопка №1 нажата", Toast.LENGTH_LONG);
         toast.show();
     }
+
+
 }
