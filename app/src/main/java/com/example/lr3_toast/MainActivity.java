@@ -10,9 +10,14 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.Toast;
 
 import com.google.android.material.internal.ContextUtils;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -65,8 +70,34 @@ public class MainActivity extends AppCompatActivity {
         builder.create();
     }
     public void test (View view){
-        Toast toast = Toast.makeText(getApplicationContext(), "Кнопка №1 нажата", Toast.LENGTH_LONG);
-        toast.show();
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Выберите фрукт");
+        String[] items = {"Огурец","Жёлудь","Апельсин","Смородина"};
+
+        List<String> fruit_list = Arrays.asList(items);
+
+        boolean[] checkItems = {false, false, false, false};
+
+        builder.setMultiChoiceItems(items, checkItems, (dialog, which, isChecked) -> {
+            checkItems[which] = isChecked;
+            String currentItem = fruit_list.get(which);
+            if(currentItem == "Апельсин")
+            {
+                Toast toast = Toast.makeText(getApplicationContext(), "Всё верно", Toast.LENGTH_SHORT);
+                toast.show();
+            }
+            else
+            {
+                findViewById(R.id.button).setVisibility(View.INVISIBLE);
+                findViewById(R.id.button2).setVisibility(View.INVISIBLE);
+                findViewById(R.id.button3).setVisibility(View.INVISIBLE);
+                findViewById(R.id.button4).setVisibility(View.INVISIBLE);
+            }
+        });
+
+        builder.show();
+        builder.create();
+
     }
 
 
