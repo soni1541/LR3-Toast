@@ -47,14 +47,19 @@ public class MainActivity extends AppCompatActivity {
 
         builder.setTitle("Кнопка №3")
 
-        .setIcon(R.drawable.test_icon)
+        .setIcon(R.drawable.img)
         .setPositiveButton("ДА", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 dialog.cancel();
-                findViewById(R.id.button).setBackgroundColor(Color.RED);
-                findViewById(R.id.button2).setBackgroundColor(Color.RED);
-                findViewById(R.id.button3).setBackgroundColor(Color.RED);
-                findViewById(R.id.button4).setBackgroundColor(Color.RED);
+
+                Button btn = (Button) findViewById(R.id.button);
+                btn.setTextColor(Color.RED);
+                Button btn2 = (Button) findViewById(R.id.button2);
+                btn2.setTextColor(Color.RED);
+                Button btn3 = (Button) findViewById(R.id.button3);
+                btn3.setTextColor(Color.RED);
+                Button btn4 = (Button) findViewById(R.id.button4);
+                btn4.setTextColor(Color.RED);
             }
         });
         builder.setNegativeButton("Отмена", new DialogInterface.OnClickListener() {
@@ -72,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
     public void test (View view){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Выберите фрукт");
+        builder.setIcon(R.drawable.test_icon);
         String[] items = {"Огурец","Жёлудь","Апельсин","Смородина"};
 
         List<String> fruit_list = Arrays.asList(items);
